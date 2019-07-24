@@ -5,15 +5,7 @@
     This program uses espeak to convert
     text to speech.
 
-    You can install espeak in ubuntu by typing the
-    following command in the terminal
-
-    sudo apt-get install espeak
-
-    However this has been tested on Ubuntu 14.04.
-    You can check on other distros as well.
-    Feel free to use the code and make any improvements
-    you want. :D
+    refer to the readme for more information.
 
 ********************************************************/
 
@@ -23,21 +15,15 @@
 #include <string>
 #include <exception>
 
-using namespace std;
-
 int main()
 {
-    string message = ""; // this will be taken as input and will be
+    std::string message = ""; // this will be taken as input and will be
                          // converted to speech
-    string command = "echo "; // the command that will be passed to cmd
+    std::string command = "echo "; // the command that will be passed to cmd
                               // your message will be appended with it
 
-    cout << "Enter your text to convert to speech : " << endl;
-    getline(cin, message);
-
-
-    // using a try cacth block
-    // for worst situations
+    std::cout << "Enter your text to convert to speech : " << std::endl;
+    std::getline(std::cin, message);
 
     try {
         command = command + message + "|espeak";
@@ -50,7 +36,8 @@ int main()
         system(command.c_str());
 
     } catch(exception e) {
-        cout << "Error!" << endl;
+        std::cout << "Error!" << std::endl;
+        return -1;
     }
 
     return 0;

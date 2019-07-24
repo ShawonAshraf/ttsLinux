@@ -1,20 +1,21 @@
-    # ttsLinux
-    > A  Simple Text To Speech for Linux
+# ttsLinux
+> A  Simple Text To Speech for Linux
 
 
-    A simple text to speech program
-    for computers running on linux.
-    This program uses espeak to convert
-    text to speech.
+A simple text to speech program for computers running on linux.
 
-    You can install `espeak` in ubuntu by typing the
-    following command in the terminal
+## Dependencies
+- `espeak`
 
-    ```bash
-    sudo apt-get install espeak
-    ```
+You can install `espeak` in `Ubuntu` by typing the
+following command in the terminal. If you're not in `Ubuntu`, refer to the package manager for your distro.
 
-    However this has been tested on Ubuntu 14.04.
-    You can check on other distros as well.
-    Feel free to use the code and make any improvements
-    you want. :D
+```bash
+sudo apt-get install espeak
+```
+
+## Running
+```bash
+g++ src/tts.cpp -o tts
+./tts
+```
